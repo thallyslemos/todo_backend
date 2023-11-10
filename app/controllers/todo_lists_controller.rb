@@ -10,7 +10,7 @@ class TodoListsController < ApplicationController
 
   # GET /todo_lists/1
   def show
-    render json: @todo_list
+    render json: @todo_list.to_json(include: :todos)
   end
 
   # POST /todo_lists

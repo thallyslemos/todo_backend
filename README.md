@@ -9,7 +9,14 @@ Este é um projeto desenvolvido para o desafio de estágio da V360. A aplicaçã
 - Ruby versão: 3.2.0
 - Rails versão: 7.0.8
 
-### Criação do Banco de Dados
+### Banco de Dados
+
+- abra o terminal na pasta do repositório e execute os seguintes comandos
+- bundle install
+- rails db:create db:migrate
+- rails server
+
+### Instruções para rodar o projeto
 
 - Sqlite3
 

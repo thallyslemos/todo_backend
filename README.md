@@ -1,24 +1,26 @@
-# README
+# API de TodoList
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este é um projeto desenvolvido para o desafio de estágio da V360. A aplicação é uma API para uma lista de tarefas (TodoList), onde cada lista pode ter várias tarefas.
 
-Things you may want to cover:
+## Configuração do Projeto
 
-* Ruby version
+### Pré-requisitos
 
-* System dependencies
+- Ruby versão: 3.2.0
+- Rails versão: 7.0.8
 
-* Configuration
+### Criação do Banco de Dados
 
-* Database creation
+- Sqlite3
 
-* Database initialization
+## Sobre o Aplicativo
 
-* How to run the test suite
+O aplicativo consiste em duas tabelas principais: `TodoList` e `Todo`.
 
-* Services (job queues, cache servers, search engines, etc.)
+- `TodoList`: Representa uma lista de tarefas. Cada lista tem um nome único e pode ter várias tarefas associadas a ela.
+- `Todo`: Representa uma tarefa individual. Cada tarefa tem um título e está associada a uma lista.
 
-* Deployment instructions
+Existem algumas validações em vigor para garantir a integridade dos dados:
 
-* ...
+- Tanto as listas quanto as tarefas devem ter um nome ou título.
+- O nome de cada lista deve ser único.

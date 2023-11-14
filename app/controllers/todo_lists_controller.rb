@@ -3,7 +3,7 @@ class TodoListsController < ApplicationController
 
   # GET /todo_lists
   def index
-    @todo_lists = TodoList.all
+    @todo_lists = current_user.todo_lists
 
     render json: @todo_lists
   end
@@ -15,7 +15,7 @@ class TodoListsController < ApplicationController
 
   # POST /todo_lists
   def create
-    @todo_list = TodoList.new(todo_list_params)
+    @todo_list = current_user.todo_lists.build(todo_list_params)
 
     if @todo_list.save
       render json: @todo_list, status: :created, location: @todo_list
@@ -41,11 +41,11 @@ class TodoListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_todo_list
-      @todo_list = TodoList.find(params[:id])
+      @todo_list = current_user.todo_lists.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def todo_list_params
-      params.require(:todo_list).permit(:name, todos_attributes: [:title, :completed, :description, :date_limit])
+      params.require(:todo_list).permit(:name, todos_attributes: [:title, :completed, :description, :date_limit, :user])
     end
 end

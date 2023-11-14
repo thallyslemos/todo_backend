@@ -10,7 +10,4 @@ class SessionsController < ApplicationController
       render json: { error: 'Email ou senha inválidos!' }, status: :unauthorized
     end
   end
-
-  def destroy
-  end
 end
